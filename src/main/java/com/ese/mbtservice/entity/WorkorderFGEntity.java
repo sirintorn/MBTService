@@ -1,13 +1,14 @@
 package com.ese.mbtservice.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
 @Table(name = "workorder_fg", schema = "public", catalog = "uikjzbfs")
-public class WorkorderFgEntity {
+public class WorkorderFGEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id", nullable = false)
@@ -223,7 +224,7 @@ public class WorkorderFgEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        WorkorderFgEntity that = (WorkorderFgEntity) o;
+        WorkorderFGEntity that = (WorkorderFGEntity) o;
         return id == that.id && workorderId == that.workorderId && Objects.equals(fgBarcode, that.fgBarcode) && Objects.equals(fgSpec, that.fgSpec) && Objects.equals(fgDescription, that.fgDescription) && Objects.equals(fgLenght, that.fgLenght) && Objects.equals(fgQty, that.fgQty) && Objects.equals(fgWeightEstimate, that.fgWeightEstimate) && Objects.equals(fgArea, that.fgArea) && Objects.equals(fgQtyActual, that.fgQtyActual) && Objects.equals(fgWeightActual, that.fgWeightActual) && Objects.equals(fgBundle, that.fgBundle) && Objects.equals(note, that.note) && Objects.equals(status, that.status) && Objects.equals(isValid, that.isValid) && Objects.equals(createBy, that.createBy) && Objects.equals(createDatetime, that.createDatetime) && Objects.equals(modifyBy, that.modifyBy) && Objects.equals(modifyDatetime, that.modifyDatetime);
     }
 

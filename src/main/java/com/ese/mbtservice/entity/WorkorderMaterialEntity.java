@@ -1,13 +1,14 @@
 package com.ese.mbtservice.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
 @Table(name = "workorder_material", schema = "public", catalog = "uikjzbfs")
-public class WorkorderMaterialEntity {
+public class WorkorderMaterialEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id", nullable = false)
@@ -37,8 +38,8 @@ public class WorkorderMaterialEntity {
     @Column(name = "coil_weight_start_actual", nullable = true, precision = 0)
     private Double coilWeightStartActual;
     @Basic
-    @Column(name = "coil_weight_estimate", nullable = true, precision = 0)
-    private Double coilWeightEstimate;
+    @Column(name = "coil_ag_qty_estimate", nullable = true, precision = 0)
+    private Double coilAgQtyEstimate;
     @Basic
     @Column(name = "coil_weight_actual", nullable = true, precision = 0)
     private Double coilWeightActual;
@@ -136,12 +137,12 @@ public class WorkorderMaterialEntity {
         this.coilWeightStartActual = coilWeightStartActual;
     }
 
-    public Double getCoilWeightEstimate() {
-        return coilWeightEstimate;
+    public Double getCoilAgQtyEstimate() {
+        return coilAgQtyEstimate;
     }
 
-    public void setCoilWeightEstimate(Double coilWeightEstimate) {
-        this.coilWeightEstimate = coilWeightEstimate;
+    public void setCoilAgQtyEstimate(Double coilAgQtyEstimate) {
+        this.coilAgQtyEstimate = coilAgQtyEstimate;
     }
 
     public Double getCoilWeightActual() {
@@ -213,11 +214,11 @@ public class WorkorderMaterialEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         WorkorderMaterialEntity that = (WorkorderMaterialEntity) o;
-        return id == that.id && workorderId == that.workorderId && Objects.equals(specoilBarcode, that.specoilBarcode) && Objects.equals(specoilCode, that.specoilCode) && Objects.equals(specoilDescription, that.specoilDescription) && Objects.equals(lot, that.lot) && Objects.equals(coilNo, that.coilNo) && Objects.equals(coilWeightStart, that.coilWeightStart) && Objects.equals(coilWeightStartActual, that.coilWeightStartActual) && Objects.equals(coilWeightEstimate, that.coilWeightEstimate) && Objects.equals(coilWeightActual, that.coilWeightActual) && Objects.equals(coilWeightRemaining, that.coilWeightRemaining) && Objects.equals(status, that.status) && Objects.equals(isValid, that.isValid) && Objects.equals(createBy, that.createBy) && Objects.equals(createDatetime, that.createDatetime) && Objects.equals(modifyBy, that.modifyBy) && Objects.equals(modifyDatetime, that.modifyDatetime);
+        return id == that.id && workorderId == that.workorderId && Objects.equals(specoilBarcode, that.specoilBarcode) && Objects.equals(specoilCode, that.specoilCode) && Objects.equals(specoilDescription, that.specoilDescription) && Objects.equals(lot, that.lot) && Objects.equals(coilNo, that.coilNo) && Objects.equals(coilWeightStart, that.coilWeightStart) && Objects.equals(coilWeightStartActual, that.coilWeightStartActual) && Objects.equals(coilAgQtyEstimate, that.coilAgQtyEstimate) && Objects.equals(coilWeightActual, that.coilWeightActual) && Objects.equals(coilWeightRemaining, that.coilWeightRemaining) && Objects.equals(status, that.status) && Objects.equals(isValid, that.isValid) && Objects.equals(createBy, that.createBy) && Objects.equals(createDatetime, that.createDatetime) && Objects.equals(modifyBy, that.modifyBy) && Objects.equals(modifyDatetime, that.modifyDatetime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, workorderId, specoilBarcode, specoilCode, specoilDescription, lot, coilNo, coilWeightStart, coilWeightStartActual, coilWeightEstimate, coilWeightActual, coilWeightRemaining, status, isValid, createBy, createDatetime, modifyBy, modifyDatetime);
+        return Objects.hash(id, workorderId, specoilBarcode, specoilCode, specoilDescription, lot, coilNo, coilWeightStart, coilWeightStartActual, coilAgQtyEstimate, coilWeightActual, coilWeightRemaining, status, isValid, createBy, createDatetime, modifyBy, modifyDatetime);
     }
 }

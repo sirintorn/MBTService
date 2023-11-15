@@ -1,13 +1,14 @@
 package com.ese.mbtservice.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
 @Table(name = "stakeholder", schema = "public", catalog = "uikjzbfs")
-public class StakeholderEntity {
+public class StakeholderEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id", nullable = false)

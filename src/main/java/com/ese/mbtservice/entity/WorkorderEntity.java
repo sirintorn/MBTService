@@ -1,14 +1,15 @@
 package com.ese.mbtservice.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
 @Table(name = "workorder", schema = "public", catalog = "uikjzbfs")
-public class WorkorderEntity {
+public class WorkorderEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id", nullable = false)

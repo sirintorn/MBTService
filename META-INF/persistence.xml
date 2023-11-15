@@ -5,6 +5,17 @@
              version="3.0">
   <persistence-unit name="default">
 
+    <class>com.ese.mbtservice.entity.LocationEntity</class>
+    <class>com.ese.mbtservice.entity.MachineEntity</class>
+    <class>com.ese.mbtservice.entity.StakeholderEntity</class>
+    <class>com.ese.mbtservice.entity.WorkorderEntity</class>
+    <class>com.ese.mbtservice.entity.WorkorderFGEntity</class>
+    <class>com.ese.mbtservice.entity.WorkorderMaterialEntity</class>
+    <properties>
+      <property name="openjpa.ConnectionURL" value="jdbc:postgresql://arjuna.db.elephantsql.com:5432/uikjzbfs"/>
+      <property name="openjpa.ConnectionDriverName" value="org.postgresql.Driver"/>
+      <property name="openjpa.ConnectionUserName" value="uikjzbfs"/>
+    </properties>
   </persistence-unit>
     <persistence-unit name="persistenceUnit"/>
 </persistence>
